@@ -1,0 +1,122 @@
+.article-list-container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.search-bar {
+  margin-bottom: 1.5rem;
+
+  .search-field {
+    width: 100%;
+  }
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  color: var(--mat-sys-on-surface-variant);
+
+  .empty-icon {
+    font-size: 4rem;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.4;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+}
+
+.article-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+mat-card.article-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  mat-card-header,
+  mat-card-content {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #888;
+
+    .meta-icon {
+      font-size: 0.85rem;
+      width: 0.85rem;
+      height: 0.85rem;
+      opacity: 0.5;
+    }
+  }
+
+  .excerpt {
+    color: var(--mat-sys-on-surface-variant);
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+.category-chip {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &.cat-cats {
+    background: #e3f2fd;
+    color: #1565c0;
+  }
+
+  &.cat-dogs {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
+
+  &.cat-notfunny {
+    background: #fce4ec;
+    color: #c62828;
+  }
+}

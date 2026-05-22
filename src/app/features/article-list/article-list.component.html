@@ -1,0 +1,56 @@
+<div class="article-list-container">
+  <div class="search-bar">
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>Search articles</mat-label>
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput [formControl]="searchControl" placeholder="Search by title..." />
+    </mat-form-field>
+  </div>
+  @if (isLoading()) {
+  <div class="loading-state">
+    <mat-spinner diameter="48"></mat-spinner>
+  </div>
+  } @else if (errorMessage()) {
+  <div class="empty-state">
+    <mat-icon class="empty-icon">error_outline</mat-icon>
+    <p>{{ errorMessage() }}</p>
+  </div>
+  } @else if (articles().length === 0) {
+  <div class="empty-state">
+    <mat-icon class="empty-icon">article</mat-icon>
+    <p>No articles available</p>
+  </div>
+  } @else if (filteredArticles().length === 0) {
+  <div class="empty-state">
+    <mat-icon class="empty-icon">manage_search</mat-icon>
+    <p>
+      No results found for <strong>"{{ searchQuery() }}"</strong>
+    </p>
+  </div>
+  } @else {
+  <div class="article-grid">
+    @for (article of filteredArticles(); track article.id) {
+    <mat-card class="article-card" (click)="goToArticle(article.id)">
+      <mat-card-header>
+        <mat-card-title class="card-title">{{ article.title }}</mat-card-title>
+        <mat-card-subtitle class="card-meta">
+          <mat-icon class="meta-icon">schedule</mat-icon>
+          {{ article.publishedDate | date: 'medium' }}
+          @if (article.category) {
+          <span class="category-chip" [class]="'cat-' + article.category.toLowerCase()">
+            {{ article.category === 'NotFunny' ? 'Not Funny' : article.category }}
+          </span>
+          }
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="excerpt">{{ article.content | excerpt }}</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button color="primary">Read more <mat-icon>arrow_forward</mat-icon></button>
+      </mat-card-actions>
+    </mat-card>
+    }
+  </div>
+  }
+</div>
