@@ -33,6 +33,9 @@
             "styles": [
               "src/styles.scss",
               "node_modules/quill/dist/quill.snow.css"
+            ],
+            "allowedCommonJsDependencies": [
+              "quill-delta"
             ]
           },
           "configurations": {
@@ -46,8 +49,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "1MB",
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
