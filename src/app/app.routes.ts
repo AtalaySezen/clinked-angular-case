@@ -8,15 +8,18 @@ import { unsavedChangesGuard } from './core/guards/unsaved-changes.guard';
 export const routes: Routes = [
   {
     path: '',
+    title: 'Articles',
     component: ArticleListComponent,
   },
   {
     path: 'create',
+    title: 'Create Article',
     component: ArticleCreateComponent,
     canDeactivate: [unsavedChangesGuard],
   },
   {
     path: 'article/:id',
+    title: 'Article',
     component: ArticleDetailComponent,
     children: [
       {
