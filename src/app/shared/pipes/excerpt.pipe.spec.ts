@@ -22,4 +22,12 @@ describe('ExcerptPipe', () => {
   it('should return empty string for empty input', () => {
     expect(pipe.transform('')).toBe('');
   });
+
+  it('should decode &nbsp; entities', () => {
+    expect(pipe.transform('<p>&nbsp;Hello</p>')).toBe('Hello');
+  });
+
+  it('should decode common HTML entities', () => {
+    expect(pipe.transform('<p>&amp; &lt;tag&gt; &quot;quote&quot;</p>')).toBe('& <tag> "quote"');
+  });
 });
