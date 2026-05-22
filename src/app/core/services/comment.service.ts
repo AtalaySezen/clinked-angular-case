@@ -11,9 +11,9 @@ import { ENVIRONMENT, Environment } from '../../../environments/environment.toke
 export class CommentService {
   private readonly http = inject(HttpClient);
 
-  readonly commentCreated$ = new Subject<void>();
+  readonly commentCreated$ = new Subject<{ articleId: string }>();
 
-  constructor(@Inject(ENVIRONMENT) private environment: Environment) { }
+  constructor(@Inject(ENVIRONMENT) private environment: Environment) {}
 
   getCommentsByArticleId(articleId: string): Observable<Comment[]> {
     return this.http.get<Comment[]>(`${this.environment.apiUrl}/comments?articleId=${articleId}`);
@@ -21,7 +21,7 @@ export class CommentService {
 
   createComment(dto: CreateCommentDto): Observable<Comment> {
     return this.http.post<Comment>(`${this.environment.apiUrl}/comments`, dto).pipe(
-      tap(() => this.commentCreated$.next()),
+      tap(() => this.commentCreated$.next({ articleId: dto.articleId })),
     );
   }
 }
