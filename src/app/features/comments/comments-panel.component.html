@@ -8,9 +8,7 @@
       <mat-icon>close</mat-icon>
     </button>
   </div>
-
   <mat-divider></mat-divider>
-
   <div class="comments-list">
     @if (isLoading()) {
     <div class="loading-state">
@@ -32,7 +30,6 @@
     }
     }
   </div>
-
   <div class="new-comment">
     @if (errorMessage()) {
     <p class="error-message">{{ errorMessage() }}</p>
