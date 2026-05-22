@@ -1,25 +1,26 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Article, CreateArticleDto } from '../models/article.model';
+import { ENVIRONMENT, Environment } from '../../../environments/environment.token';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ArticleService {
-  private readonly apiUrl = 'http://localhost:3001/articles';
+  private readonly http = inject(HttpClient);
 
-  constructor(private http: HttpClient) {}
+  constructor(@Inject(ENVIRONMENT) private environment: Environment) {}
 
   getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>(this.apiUrl);
+    return this.http.get<Article[]>(`${this.environment.apiUrl}/articles`);
   }
 
   getArticleById(id: string): Observable<Article> {
-    return this.http.get<Article>(`${this.apiUrl}/${id}`);
+    return this.http.get<Article>(`${this.environment.apiUrl}/articles/${id}`);
   }
 
   createArticle(dto: CreateArticleDto): Observable<Article> {
-    return this.http.post<Article>(this.apiUrl, dto);
+    return this.http.post<Article>(`${this.environment.apiUrl}/articles`, dto);
   }
 }
