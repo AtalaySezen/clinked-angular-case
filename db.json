@@ -26,21 +26,18 @@
     {
       "id": "1",
       "articleId": "1",
-      "author": "Alice",
       "content": "Great article! My cat does this every day.",
       "createdAt": "2026-05-20T11:00:00.000Z"
     },
     {
       "id": "2",
       "articleId": "1",
-      "author": "Bob",
       "content": "Cats are truly unpredictable, that is what makes them amazing.",
       "createdAt": "2026-05-20T12:30:00.000Z"
     },
     {
       "id": "3",
       "articleId": "2",
-      "author": "Charlie",
       "content": "We have a Golden Retriever and he is the best family dog ever!",
       "createdAt": "2026-05-21T09:00:00.000Z"
     }
