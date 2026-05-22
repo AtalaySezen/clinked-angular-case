@@ -46,6 +46,8 @@
     margin: 0 0 1rem;
     color: var(--mat-sys-on-surface);
     letter-spacing: -0.5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .article-meta {
@@ -70,6 +72,8 @@
     line-height: 1.85;
     font-size: 1.05rem;
     color: var(--mat-sys-on-surface);
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .article-footer {
