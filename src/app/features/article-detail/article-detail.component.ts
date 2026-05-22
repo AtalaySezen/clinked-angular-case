@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, signal, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal, ChangeDetectionStrategy, HostListener, inject } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { ArticleService } from '../../core/services/article.service';
@@ -84,6 +84,11 @@ export class ArticleDetailComponent implements OnInit, OnDestroy {
     this.route.children.forEach((child) => {
       if (child.outlet === 'side-panel') this.panelOpen.set(true);
     });
+  }
+
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    if (this.panelOpen()) this.toggleComments();
   }
 
   toggleComments(): void {
