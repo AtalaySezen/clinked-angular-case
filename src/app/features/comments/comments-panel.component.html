@@ -1,0 +1,60 @@
+<div class="comments-panel">
+  <div class="panel-header">
+    <h2>Comments</h2>
+    @if (!isLoading()) {
+    <span class="count-badge">{{ safeComments().length }}</span>
+    }
+    <button mat-icon-button class="close-btn" (click)="close()" aria-label="Close comments">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="comments-list">
+    @if (isLoading()) {
+    <div class="loading-state">
+      <mat-spinner diameter="32"></mat-spinner>
+    </div>
+    } @else if (safeComments().length === 0) {
+    <div class="no-comments">
+      <p>No comments yet. Be the first!</p>
+    </div>
+    } @else {
+    @for (item of safeComments(); track item.comment.id) {
+    <div class="comment-item">
+      <div class="comment-body">
+        <div class="comment-content" [innerHTML]="item.safeContent"></div>
+        <div class="comment-date">{{ item.comment.createdAt | date: 'MMM d, y · h:mm a' }}</div>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    }
+    }
+  </div>
+
+  <div class="new-comment">
+    @if (errorMessage()) {
+    <p class="error-message">{{ errorMessage() }}</p>
+    }
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Write a comment</mat-label>
+      <textarea matInput [formControl]="commentControl" rows="3" placeholder="Share your thoughts..."></textarea>
+      @if (commentControl.hasError('required') && commentControl.touched) {
+      <mat-error>Comment cannot be empty</mat-error>
+      }
+    </mat-form-field>
+    <div class="form-actions">
+      <button mat-flat-button color="primary" class="submit-btn" (click)="submitComment()" [disabled]="isSubmitting()">
+        @if (isSubmitting()) {
+        <mat-spinner diameter="18"></mat-spinner>
+        } @else {
+        <span class="btn-content">
+          <mat-icon>send</mat-icon>
+          Post
+        </span>
+        }
+      </button>
+    </div>
+  </div>
+</div>
