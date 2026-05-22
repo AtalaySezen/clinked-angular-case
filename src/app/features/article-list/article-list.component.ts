@@ -74,6 +74,10 @@ export class ArticleListComponent implements OnInit {
       .subscribe((query) => this.searchQuery.set(query ?? ''));
   }
 
+  isNew(publishedDate: string): boolean {
+    return Date.now() - new Date(publishedDate).getTime() < 24 * 60 * 60 * 1000;
+  }
+
   goToArticle(id: string): void {
     this.router.navigate(['/article', id]);
   }

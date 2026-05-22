@@ -91,6 +91,20 @@ mat-card.article-card {
     }
   }
 
+  .new-badge {
+    display: inline-block;
+    background: #dcfce7;
+    color: #16a34a;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.1rem 0.4rem;
+    border-radius: 20px;
+    vertical-align: middle;
+    margin-left: 0.4rem;
+  }
+
   .excerpt {
     color: var(--mat-sys-on-surface-variant);
     font-size: 0.875rem;

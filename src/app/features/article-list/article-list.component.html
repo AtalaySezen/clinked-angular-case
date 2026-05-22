@@ -32,7 +32,12 @@
     @for (article of filteredArticles(); track article.id) {
     <mat-card class="article-card" (click)="goToArticle(article.id)">
       <mat-card-header>
-        <mat-card-title class="card-title">{{ article.title }}</mat-card-title>
+        <mat-card-title class="card-title">
+          {{ article.title }}
+          @if (isNew(article.publishedDate)) {
+          <span class="new-badge">New</span>
+          }
+        </mat-card-title>
         <mat-card-subtitle class="card-meta">
           <mat-icon class="meta-icon">schedule</mat-icon>
           {{ article.publishedDate | date: 'medium' }}
