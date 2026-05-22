@@ -4,7 +4,7 @@
   </div>
   <mat-card class="create-card">
     <mat-card-content>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" (keydown.escape)="goBack()">
         <mat-form-field appearance="outline" class="full-width">
           <mat-label>Title</mat-label>
           <mat-icon matPrefix>title</mat-icon>
