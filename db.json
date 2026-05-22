@@ -1,0 +1,48 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "Why Cats Rule the Internet",
+      "content": "Cats have dominated the internet for decades. From viral videos to endless meme formats, their unpredictable behavior and expressive faces make them perfect content. Scientists believe this is due to their independent nature combined with occasional bursts of affection that mirror human emotional needs.",
+      "category": "Cats",
+      "publishedDate": "2026-05-20T10:30:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Top 10 Dog Breeds for Families",
+      "content": "Choosing the right dog breed for your family is an important decision. Factors like energy level, size, and temperament all play a role. Golden Retrievers, Labrador Retrievers, and Beagles consistently rank among the top choices for families with children due to their gentle and playful nature.",
+      "category": "Dogs",
+      "publishedDate": "2026-05-21T08:15:00.000Z"
+    },
+    {
+      "id": "3",
+      "title": "The Science Behind Why We Find Things Funny",
+      "content": "Humor is a complex cognitive and social phenomenon. Researchers have identified several theories of humor including incongruity theory, relief theory, and superiority theory. The brain's reward system releases dopamine when we laugh, which explains why humor is such a powerful social bonding tool.",
+      "category": "Not Funny",
+      "publishedDate": "2026-05-22T14:00:00.000Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "articleId": "1",
+      "author": "Alice",
+      "content": "Great article! My cat does this every day.",
+      "createdAt": "2026-05-20T11:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "articleId": "1",
+      "author": "Bob",
+      "content": "Cats are truly unpredictable, that is what makes them amazing.",
+      "createdAt": "2026-05-20T12:30:00.000Z"
+    },
+    {
+      "id": "3",
+      "articleId": "2",
+      "author": "Charlie",
+      "content": "We have a Golden Retriever and he is the best family dog ever!",
+      "createdAt": "2026-05-21T09:00:00.000Z"
+    }
+  ]
+}
