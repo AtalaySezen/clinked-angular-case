@@ -1,0 +1,18 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  .brand {
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 0.25rem;
+    letter-spacing: 0.5px;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+}

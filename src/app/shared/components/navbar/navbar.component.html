@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="navbar">
+  <button mat-icon-button (click)="goHome()" aria-label="Home">
+    <mat-icon>article</mat-icon>
+  </button>
+  <span class="brand" (click)="goHome()">NewsHub</span>
+  <span class="spacer"></span>
+  <button mat-stroked-button (click)="goToCreate()">
+    <mat-icon>add</mat-icon>
+    New Article
+  </button>
+</mat-toolbar>
