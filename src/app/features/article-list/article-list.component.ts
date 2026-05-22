@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ExcerptPipe } from '../../shared/pipes/excerpt.pipe';
+import { ReadTimePipe } from '../../shared/pipes/read-time.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import { Article } from '../../core/models/article.model';
 import { MatInputModule } from '@angular/material/input';
@@ -27,6 +28,7 @@ import { Router } from '@angular/router';
     MatProgressSpinnerModule,
     DatePipe,
     ExcerptPipe,
+    ReadTimePipe,
   ],
   templateUrl: './article-list.component.html',
   styleUrl: './article-list.component.scss',

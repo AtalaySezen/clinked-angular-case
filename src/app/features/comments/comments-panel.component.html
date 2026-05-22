@@ -36,7 +36,8 @@
     }
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Write a comment</mat-label>
-      <textarea matInput [formControl]="commentControl" rows="3" placeholder="Share your thoughts..."></textarea>
+      <textarea matInput [formControl]="commentControl" rows="3" placeholder="Share your thoughts..."
+        (keydown.control.enter)="submitComment()"></textarea>
       @if (commentControl.hasError('required') && commentControl.touched) {
       <mat-error>Comment cannot be empty</mat-error>
       }
