@@ -10,6 +10,12 @@
   flex-direction: column;
   z-index: 99;
   animation: slideIn 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  @media (max-width: 480px) {
+    width: 100%;
+    top: 56px;
+    height: calc(100vh - 56px);
+  }
 }
 
 @keyframes slideIn {
@@ -101,6 +107,10 @@
 
   .full-width {
     width: 100%;
+
+    textarea {
+      resize: none;
+    }
   }
 
   .form-actions {
