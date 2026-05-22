@@ -22,7 +22,7 @@
     @for (item of safeComments(); track item.comment.id) {
     <div class="comment-item">
       <div class="comment-body">
-        <div class="comment-content" [innerHTML]="item.safeContent"></div>
+        <div class="comment-content">{{ item.comment.content }}</div>
         <div class="comment-date">{{ item.comment.createdAt | date: 'MMM d, y · h:mm a' }}</div>
       </div>
     </div>
